@@ -2,13 +2,21 @@ const courseApi= 'http://localhost:3000/course';
 let courseList = [];
 
 const getCourse = async () => {
-    const resData = await fetch(courseApi);
+    const resData = await fetch(courseApi, {
+        mode: "no-cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "include", // include, *same-origin, omit
+    });
     courseList = await resData.json();
     renderCourse(courseList);
 };
 
 const getCourseById = async (id) => {
-    const resData = await fetch(courseApi + '/' + id);
+    const resData = await fetch(courseApi + '/' + id, {
+        mode: "no-cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "include", // include, *same-origin, omit
+    });
     const course = await resData.json();
     return course;
 };
@@ -58,6 +66,9 @@ const addCourse = () => {
         };
         fetch(courseApi, {
             method: "POST",
+            mode: "no-cors", // no-cors, *cors, same-origin
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "include", // include, *same-origin, omit
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
         });
@@ -74,6 +85,9 @@ const editCourse = (id) => {
         };
         fetch(courseApi + '/' + id, {
             method: "PUT",
+            mode: "no-cors", // no-cors, *cors, same-origin
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "include", // include, *same-origin, omit
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
         });
@@ -83,6 +97,9 @@ const editCourse = (id) => {
 const deleteCourse = (id) => {
     fetch(courseApi + '/' + id, {
         method: "DELETE",
+        mode: "no-cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "include", // include, *same-origin, omit
         headers: { "Content-Type": "application/json" },
     })
 };
