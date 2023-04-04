@@ -5,9 +5,8 @@
   "main": "style.js",
   "homepage": "https://lduong4742.github.io/json-server/",
   "scripts": {
-    "start": "json-server --watch ./db.json",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm start"
+    "start": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
