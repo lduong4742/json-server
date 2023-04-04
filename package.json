@@ -5,7 +5,8 @@
   "main": "style.js",
   "scripts": {
     "start": "json-server --watch ./theory_js/db.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm start"
   },
   "author": "",
   "license": "ISC",
